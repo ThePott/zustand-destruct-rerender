@@ -17,7 +17,7 @@ const logAtStart =
 ║      ██║         ██║  ██╗      ║
 ║      ╚═╝         ╚═╝  ╚═╝      ║
 ║                                ║
-║  to clear initial logs         ║
+║  to clear logs                 ║
 ║                                ║
 ╚════════════════════════════════╝
 `
