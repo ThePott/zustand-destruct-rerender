@@ -1,10 +1,7 @@
-import { Paper, Typography } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
 import { createContext, useContext } from 'react';
 import type { FruitBoxProps } from '../../interfaces';
-import { destructuredSummaryCode } from "./summaryCode";
-
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import FruitCodeBlock from './_FruitCodeBlock';
 
 const FruitBoxContext = createContext<string | null>(null)
 
@@ -21,24 +18,10 @@ const FruitBoxBase = ({ usage, children }: FruitBoxProps) => {
 
     return (
         <FruitBoxContext.Provider value={usage}>
-            {/* <Paper component="pre" className='absolute'>
-                <SyntaxHighlighter
-                    language="tsx"
-                    style={tomorrow} // Dark theme
-                    customStyle={{
-                        margin: 0,
-                        padding: '16px',
-                        fontSize: '0.875rem',
-                        fontFamily: '"Fira Code", Monaco, "Lucida Console", monospace'
-                    }}
-                >
-                    {destructuredSummaryCode}
-                </SyntaxHighlighter>
-
-            </Paper> */}
-            <Paper sx={{ borderRadius: "12px" }} className='p-6 flex flex-col gap-3'>
+            <Paper sx={{ borderRadius: "12px" }} className='w-[800px] p-6 flex flex-col gap-3'>
                 <Typography variant='h6' className='text-center'>{title}</Typography>
                 {children}
+                <FruitCodeBlock />
             </Paper>
         </FruitBoxContext.Provider>
     )

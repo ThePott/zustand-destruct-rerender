@@ -2,10 +2,10 @@ import { Box, Button, Typography } from "@mui/material";
 import type { FruitName } from "../../interfaces";
 import { useDesctructedFruit, useOneByOneFruit } from "../../store";
 import { useFruitBoxContext } from "./_FruitBoxBase";
+import { useEffect } from "react";
 
 const FruitItem = ({ fruitName }: { fruitName: FruitName }) => {
     const usage = useFruitBoxContext()
-    console.log(`---- ${usage} ${fruitName} re-rendered`);
 
     const isDestructured = usage === "DESTRUCTURED"
     const isApple = fruitName === 'APPLE';
@@ -42,6 +42,12 @@ const FruitItem = ({ fruitName }: { fruitName: FruitName }) => {
             increase = increaseBananaStock
         }
     }
+
+    useEffect(
+        () => {
+            return () => console.log(`---- ${usage} ${fruitName.toLowerCase()} re-rendered`)
+        }
+    )
 
     return (
         <Box className="flex justify-between items-center gap-6">
