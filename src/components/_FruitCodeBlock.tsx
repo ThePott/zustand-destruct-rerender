@@ -1,4 +1,4 @@
-import { Box, Paper, ToggleButton, ToggleButtonGroup } from "@mui/material";
+import { Box, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { useState } from "react";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -24,7 +24,7 @@ const FruitCodeBlock = () => {
   const code = codeVisibility === "EXPANDED" ? expandedCode : summarizedCode
 
   const toggle = (
-    event: React.MouseEvent<HTMLElement, MouseEvent>,
+    _: React.MouseEvent<HTMLElement, MouseEvent>,
     newValue: CodeVisibility
   ) => {
     setCodeVisibility(newValue)

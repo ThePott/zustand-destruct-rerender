@@ -1,4 +1,4 @@
-import { Box, Paper, Typography } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 import { createContext, useContext } from 'react';
 import type { FruitBoxProps } from '../interfaces';
 import FruitCodeBlock from './_FruitCodeBlock';
