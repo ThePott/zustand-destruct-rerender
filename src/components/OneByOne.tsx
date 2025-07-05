@@ -46,7 +46,9 @@ const Banana = () => {
 }
 
 const OneByOneFruitBox = () => {
-  console.log("---- one-by-one app re-rendered")
+   const bananaStock = useOneByOneFruit((state) => state.bananaStock)
+  const increaseBananaStock = useOneByOneFruit((state) => state.increaseBananaStock)
+  console.log("---- one-by-one banana re-rendered")
   return (
     <Box>
       <Typography variant='h6'>하나 씩 할당</Typography>
