@@ -1,6 +1,6 @@
 import FruitItem from "./_FruitItem";
 import FruitBoxBase from "./_FruitBoxBase";
-import type { FruitBoxType } from "../../interfaces";
+import type { FruitBoxType } from "../interfaces";
 
 const FruitBox = FruitBoxBase as FruitBoxType
 

@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material'
-import FruitBox from './components/common/FruitBox'
+import FruitBox from './components/FruitBox'
 import { logAtStart } from './asciiArt'
 import { useEffect } from 'react'
 

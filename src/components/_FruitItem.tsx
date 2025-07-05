@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
-import type { FruitName } from "../../interfaces";
-import { useDesctructedFruit, useOneByOneFruit } from "../../store";
+import type { FruitName } from "../interfaces";
+import { useDesctructedFruit, useOneByOneFruit } from "../store";
 import { useFruitBoxContext } from "./_FruitBoxBase";
 import { useEffect } from "react";
 
