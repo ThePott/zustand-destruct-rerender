@@ -14,6 +14,7 @@ How do you allocate states from zustand store?
 2. allocate states one by one as document says?
 
 This app shows re-render problem of destructuring store.
+
 [Zustand README __Recipes __Fetching everything](https://github.com/pmndrs/zustand/blob/c61999bacd59c649a2932e96b1da413691f55e3e/README.md?plain=1#L70-L76)
 
 ## ✨ Main Feature
