@@ -1,69 +1,42 @@
-# React + TypeScript + Vite
+# ❓ What Are The Differences?
+```tsx
+// 1. destructure
+const { stock, increaseStock } = useStore()
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+// 2. one-by-one
+const stock = useStore((state) => state.stock)
+const increaseStock = useStore((state) => state.increaseStock)
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📖 Introduction
+How do you allocate states from zustand store?
+1. using destructuring for concise code?
+2. allocate states one by one as document says?
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This app shows re-render problem of destructuring store.
+[Zustand README __Recipes __Fetching everything](https://github.com/pmndrs/zustand/blob/c61999bacd59c649a2932e96b1da413691f55e3e/README.md?plain=1#L70-L76)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## ✨ Main Feature
+1. **Side-by-side comparison**      : Compare destructured vs one-by-one state allocation
+2. **Interactive demonstration**    : Click buttons to see console logs of re-rendering
+3. **Code display**                 : View the actual implementation of code
+
+## 🛠️ Tech Stack
+This app demonstrates:
+1. Zustand                  : Allocate states using both ways
+2. Compound Pattern         : Follow compound patterns to minimize redandunt codes
+3. Material UI              : Apply custom MUI theme globally
+4. React Syntax Highlighter : Highlight syntax of code block in display
+
+
+## 📦 Installation
+In the project directory, you can run:
+```bash
+git clone https://github.com/ThePott/zustand-destructure-rerender
+cd zustand-destructure-rerender
+npm install
 ```
+## ✅ Requirements
+* Node.js
+## 📜 License
+MIT
